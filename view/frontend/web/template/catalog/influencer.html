@@ -1,0 +1,19 @@
+<div class="influencer-container">
+    <div class="influencer" data-bind="style: {width: width + 'px', height: height + 'px'}">
+        <div class="influencer-name" data-bind="html: influencer.social_name"></div>
+    </div>
+    <div class="influencer-items">
+        <div class="list-product" data-bind="foreach: { data: influencer.products, as: 'product' }">
+            <span class="product" data-bind="style: {width: $parent.width + 'px', height: '300px'}">
+                <a data-bind="attr: {href: product.url_rewrites[0].url}">
+                    <div class="thumbnail"><img data-bind="attr: {src: product.image.url}" alt=""></div>
+                    <div class="title" data-bind="text: product.name"></div>
+                    <div class="price">
+                        <span data-bind="text: product.price.regularPrice.amount.value + ' ' + product.price.regularPrice.amount.currency"></span>
+                    </div>
+                    <div class="title" data-bind="text: ko.toJSON(product.url)"></div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

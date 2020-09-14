@@ -1,0 +1,9 @@
+<div class="influencer-item" data-bind="style: {width: width + 'px', height: height + 'px'}">
+    <a data-bind="attr: {href: item.url}">
+        <img data-bind="attr: {src: item.image, alt: 'Image of Item : ' + item.name}" />
+    </a>
+    <div class="product-name" data-bind="html: item.name"></div>
+    <div class="product-price" data-bind="html: item.price"></div>
+</div>
+
+

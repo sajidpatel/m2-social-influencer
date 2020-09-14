@@ -1,0 +1,124 @@
+<?xml version="1.0" ?>
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">social_influencer_listing.social_influencer_listing_data_source</item>
+        </item>
+    </argument>
+    <settings>
+        <spinner>social_influencer_columns</spinner>
+        <deps>
+            <dep>social_influencer_listing.social_influencer_listing_data_source</dep>
+        </deps>
+        <buttons>
+            <button name="add">
+                <url path="*/*/new"/>
+                <class>primary</class>
+                <label translate="true">Add new Influencer</label>
+            </button>
+        </buttons>
+    </settings>
+    <dataSource component="Magento_Ui/js/grid/provider" name="social_influencer_listing_data_source">
+        <settings>
+            <updateUrl path="mui/index/render"/>
+        </settings>
+        <aclResource>SajidPatel_SocialInfluencer::Influencer</aclResource>
+        <dataProvider class="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider" name="social_influencer_listing_data_source">
+            <settings>
+                <requestFieldName>id</requestFieldName>
+                <primaryFieldName>id</primaryFieldName>
+            </settings>
+        </dataProvider>
+    </dataSource>
+    <listingToolbar name="listing_top">
+        <settings>
+            <sticky>true</sticky>
+        </settings>
+        <bookmark name="bookmarks"/>
+        <columnsControls name="columns_controls"/>
+        <filters name="listing_filters"/>
+        <paging name="listing_paging"/>
+    </listingToolbar>
+    <columns name="social_influencer_columns">
+        <settings>
+            <editorConfig>
+                <param name="selectProvider" xsi:type="string">social_influencer_listing.social_influencer_listing.social_influencer_columns.ids</param>
+                <param name="enabled" xsi:type="boolean">true</param>
+                <param name="indexField" xsi:type="string">id</param>
+                <param name="clientConfig" xsi:type="array">
+                    <item name="saveUrl" path="social_influencer/Influencer/inlineEdit" xsi:type="url"/>
+                    <item name="validateBeforeSave" xsi:type="boolean">false</item>
+                </param>
+            </editorConfig>
+            <childDefaults>
+                <param name="fieldAction" xsi:type="array">
+                    <item name="provider" xsi:type="string">social_influencer_listing.social_influencer_listing.social_influencer_columns_editor</item>
+                    <item name="target" xsi:type="string">startEdit</item>
+                    <item name="params" xsi:type="array">
+                        <item name="0" xsi:type="string">${ $.$data.rowIndex }</item>
+                        <item name="1" xsi:type="boolean">true</item>
+                    </item>
+                </param>
+            </childDefaults>
+        </settings>
+        <selectionsColumn name="ids">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="resizeEnabled" xsi:type="boolean">false</item>
+                    <item name="resizeDefaultWidth" xsi:type="string">55</item>
+                    <item name="indexField" xsi:type="string">id</item>
+                </item>
+            </argument>
+        </selectionsColumn>
+        <column name="id" sortOrder="10">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="filter" xsi:type="string">textRange</item>
+                    <item name="sorting" xsi:type="string">asc</item>
+                    <item name="label" xsi:type="string" translate="true">ID</item>
+                    <item name="sortOrder" xsi:type="number">10</item>
+                </item>
+            </argument>
+        </column>
+        <column name="social_name" sortOrder="20">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="filter" xsi:type="string">textRange</item>
+                    <item name="sorting" xsi:type="string">asc</item>
+                    <item name="label" xsi:type="string" translate="true">Name</item>
+                    <item name="sortOrder" xsi:type="number">30</item>
+                </item>
+            </argument>
+        </column>
+        <column name="customer_id" sortOrder="30">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="filter" xsi:type="string">textRange</item>
+                    <item name="sorting" xsi:type="string">asc</item>
+                    <item name="label" xsi:type="string" translate="true">Customer ID</item>
+                    <item name="sortOrder" xsi:type="number">20</item>
+                </item>
+            </argument>
+        </column>
+        <column name="enabled">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">enabled</label>
+                <editor>
+                    <editorType>text</editorType>
+                    <validation>
+                        <rule name="required-entry" xsi:type="boolean">false</rule>
+                    </validation>
+                </editor>
+            </settings>
+        </column>
+        <actionsColumn class="SajidPatel\SocialInfluencer\Ui\Component\Listing\Column\InfluencerActions" name="actions" sortOrder="200">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="indexField" xsi:type="string">id</item>
+                    <item name="sortOrder" xsi:type="number">200</item>
+                </item>
+            </argument>
+        </actionsColumn>
+    </columns>
+</listing>

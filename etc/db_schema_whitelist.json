@@ -1,0 +1,33 @@
+{
+    "social_influencer": {
+        "column": {
+            "id": true,
+            "customer_id": true,
+            "social_name": true,
+            "enabled": true,
+            "created_at": true,
+            "updated_at": true
+        },
+        "constraint": {
+            "PRIMARY": true,
+            "social_influencer_CSTR_ID_CSTR_ENTT_ENTT_ID": true,
+            "SOCIAL_INFLUENCER_CUSTOMER_ID_CUSTOMER_ENTITY_ENTITY_ID": true,
+            "SOCIAL_INFLUENCER_SOCIAL_NAME_CUSTOMER_ID": true
+        }
+    },
+    "social_influencer_product": {
+        "column": {
+            "id": true,
+            "sku": true,
+            "enabled": true,
+            "influencer_id": true,
+            "created_at": true,
+            "updated_at": true
+        },
+        "constraint": {
+            "PRIMARY": true,
+            "FK_C22073318F27AE19737DCBF0E8FBB59F": true,
+            "social_influencer_SOCIAL_NAME": true
+        }
+    }
+}

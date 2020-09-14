@@ -1,8 +1,8 @@
 <?php declare(strict_types = 1);
 
-namespace VinaiKopp\FavoriteProducts\Model\Exception;
+namespace SajidPatel\SocialInfluencer\Model\Exception;
 
-class InvalidFavoriteSkuException extends \InvalidArgumentException
+class InvalidProductSkuException extends \InvalidArgumentException
 {
-    
+
 }

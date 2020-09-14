@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<alr:test-suite xmlns:alr="urn:model.allure.qatools.yandex.ru" start="1591263941864" stop="1591263941890" version="1.4.0">
+  <name>SajidPatel\SocialInfluencer\Model\SocialInfluencerProductsSessionRepositoryTest</name>
+  <test-cases>
+    <test-case start="1591263941865" stop="1591263941883" status="broken">
+      <name>testImplementsSocialInfluencerProductsSessionRepositoryInterface</name>
+      <failure>
+        <message>Argument 1 passed to SajidPatel\SocialInfluencer\Model\SocialInfluencerProductsSessionRepository::__construct() must be an instance of SajidPatel\SocialInfluencer\Model\SocialInfluencerProductSession, instance of Mock_SocialInfluencerProductsSession_ca5f4aa8 given, called in /Users/sajidpatel/sites/m2react/shared/extensions/SajidPatel/SocialInfluencer/Test/Unit/Model/SocialInfluencerProductsSessionRepositoryTest.php on line 20</message>
+        <stack-trace>#0 /Users/sajidpatel/sites/m2react/vendor/phpunit/phpunit/src/Framework/TestCase.php(894): PHPUnit\Framework\TestResult-&gt;run(Object(SajidPatel\SocialInfluencer\Model\SocialInfluencerProductsSessionRepositoryTest))
+#1 /Users/sajidpatel/sites/m2react/vendor/phpunit/phpunit/src/Framework/TestSuite.php(755): PHPUnit\Framework\TestCase-&gt;run(Object(PHPUnit\Framework\TestResult))
+#2 /Users/sajidpatel/sites/m2react/vendor/phpunit/phpunit/src/Framework/TestSuite.php(755): PHPUnit\Framework\TestSuite-&gt;run(Object(PHPUnit\Framework\TestResult))
+#3 /Users/sajidpatel/sites/m2react/vendor/phpunit/phpunit/src/TextUI/TestRunner.php(545): PHPUnit\Framework\TestSuite-&gt;run(Object(PHPUnit\Framework\TestResult))
+#4 /Users/sajidpatel/sites/m2react/vendor/phpunit/phpunit/src/TextUI/Command.php(195): PHPUnit\TextUI\TestRunner-&gt;doRun(Object(PHPUnit\Framework\TestSuite), Array, true)
+#5 /Users/sajidpatel/sites/m2react/vendor/phpunit/phpunit/src/TextUI/Command.php(148): PHPUnit\TextUI\Command-&gt;run(Array, true)
+#6 /Users/sajidpatel/sites/m2react/vendor/phpunit/phpunit/phpunit(53): PHPUnit\TextUI\Command::main()
+#7 {main}</stack-trace>
+      </failure>
+    </test-case>
+    <test-case start="1591263941883" stop="1591263941886" status="broken">
+      <name>testReturnsTheSkusStoredInTheSession</name>
+      <failure>
+        <message>Argument 1 passed to SajidPatel\SocialInfluencer\Model\SocialInfluencerProductsSessionRepository::__construct() must be an instance of SajidPatel\SocialInfluencer\Model\SocialInfluencerProductSession, instance of Mock_SocialInfluencerProductsSession_ca5f4aa8 given, called in /Users/sajidpatel/sites/m2react/shared/extensions/SajidPatel/SocialInfluencer/Test/Unit/Model/SocialInfluencerProductsSessionRepositoryTest.php on line 20</message>
+        <stack-trace>#0 /Users/sajidpatel/sites/m2react/vendor/phpunit/phpunit/src/Framework/TestCase.php(894): PHPUnit\Framework\TestResult-&gt;run(Object(SajidPatel\SocialInfluencer\Model\SocialInfluencerProductsSessionRepositoryTest))
+#1 /Users/sajidpatel/sites/m2react/vendor/phpunit/phpunit/src/Framework/TestSuite.php(755): PHPUnit\Framework\TestCase-&gt;run(Object(PHPUnit\Framework\TestResult))
+#2 /Users/sajidpatel/sites/m2react/vendor/phpunit/phpunit/src/Framework/TestSuite.php(755): PHPUnit\Framework\TestSuite-&gt;run(Object(PHPUnit\Framework\TestResult))
+#3 /Users/sajidpatel/sites/m2react/vendor/phpunit/phpunit/src/TextUI/TestRunner.php(545): PHPUnit\Framework\TestSuite-&gt;run(Object(PHPUnit\Framework\TestResult))
+#4 /Users/sajidpatel/sites/m2react/vendor/phpunit/phpunit/src/TextUI/Command.php(195): PHPUnit\TextUI\TestRunner-&gt;doRun(Object(PHPUnit\Framework\TestSuite), Array, true)
+#5 /Users/sajidpatel/sites/m2react/vendor/phpunit/phpunit/src/TextUI/Command.php(148): PHPUnit\TextUI\Command-&gt;run(Array, true)
+#6 /Users/sajidpatel/sites/m2react/vendor/phpunit/phpunit/phpunit(53): PHPUnit\TextUI\Command::main()
+#7 {main}</stack-trace>
+      </failure>
+    </test-case>
+    <test-case start="1591263941887" stop="1591263941888" status="broken">
+      <name>testAddsSkuToSession</name>
+      <failure>
+        <message>Argument 1 passed to SajidPatel\SocialInfluencer\Model\SocialInfluencerProductsSessionRepository::__construct() must be an instance of SajidPatel\SocialInfluencer\Model\SocialInfluencerProductSession, instance of Mock_SocialInfluencerProductsSession_ca5f4aa8 given, called in /Users/sajidpatel/sites/m2react/shared/extensions/SajidPatel/SocialInfluencer/Test/Unit/Model/SocialInfluencerProductsSessionRepositoryTest.php on line 20</message>
+        <stack-trace>#0 /Users/sajidpatel/sites/m2react/vendor/phpunit/phpunit/src/Framework/TestCase.php(894): PHPUnit\Framework\TestResult-&gt;run(Object(SajidPatel\SocialInfluencer\Model\SocialInfluencerProductsSessionRepositoryTest))
+#1 /Users/sajidpatel/sites/m2react/vendor/phpunit/phpunit/src/Framework/TestSuite.php(755): PHPUnit\Framework\TestCase-&gt;run(Object(PHPUnit\Framework\TestResult))
+#2 /Users/sajidpatel/sites/m2react/vendor/phpunit/phpunit/src/Framework/TestSuite.php(755): PHPUnit\Framework\TestSuite-&gt;run(Object(PHPUnit\Framework\TestResult))
+#3 /Users/sajidpatel/sites/m2react/vendor/phpunit/phpunit/src/TextUI/TestRunner.php(545): PHPUnit\Framework\TestSuite-&gt;run(Object(PHPUnit\Framework\TestResult))
+#4 /Users/sajidpatel/sites/m2react/vendor/phpunit/phpunit/src/TextUI/Command.php(195): PHPUnit\TextUI\TestRunner-&gt;doRun(Object(PHPUnit\Framework\TestSuite), Array, true)
+#5 /Users/sajidpatel/sites/m2react/vendor/phpunit/phpunit/src/TextUI/Command.php(148): PHPUnit\TextUI\Command-&gt;run(Array, true)
+#6 /Users/sajidpatel/sites/m2react/vendor/phpunit/phpunit/phpunit(53): PHPUnit\TextUI\Command::main()
+#7 {main}</stack-trace>
+      </failure>
+    </test-case>
+    <test-case start="1591263941888" stop="1591263941890" status="broken">
+      <name>testRemovesSkuFromSession</name>
+      <failure>
+        <message>Argument 1 passed to SajidPatel\SocialInfluencer\Model\SocialInfluencerProductsSessionRepository::__construct() must be an instance of SajidPatel\SocialInfluencer\Model\SocialInfluencerProductSession, instance of Mock_SocialInfluencerProductsSession_ca5f4aa8 given, called in /Users/sajidpatel/sites/m2react/shared/extensions/SajidPatel/SocialInfluencer/Test/Unit/Model/SocialInfluencerProductsSessionRepositoryTest.php on line 20</message>
+        <stack-trace>#0 /Users/sajidpatel/sites/m2react/vendor/phpunit/phpunit/src/Framework/TestCase.php(894): PHPUnit\Framework\TestResult-&gt;run(Object(SajidPatel\SocialInfluencer\Model\SocialInfluencerSessionProductsRepositoryTest))
+#1 /Users/sajidpatel/sites/m2react/vendor/phpunit/phpunit/src/Framework/TestSuite.php(755): PHPUnit\Framework\TestCase-&gt;run(Object(PHPUnit\Framework\TestResult))
+#2 /Users/sajidpatel/sites/m2react/vendor/phpunit/phpunit/src/Framework/TestSuite.php(755): PHPUnit\Framework\TestSuite-&gt;run(Object(PHPUnit\Framework\TestResult))
+#3 /Users/sajidpatel/sites/m2react/vendor/phpunit/phpunit/src/TextUI/TestRunner.php(545): PHPUnit\Framework\TestSuite-&gt;run(Object(PHPUnit\Framework\TestResult))
+#4 /Users/sajidpatel/sites/m2react/vendor/phpunit/phpunit/src/TextUI/Command.php(195): PHPUnit\TextUI\TestRunner-&gt;doRun(Object(PHPUnit\Framework\TestSuite), Array, true)
+#5 /Users/sajidpatel/sites/m2react/vendor/phpunit/phpunit/src/TextUI/Command.php(148): PHPUnit\TextUI\Command-&gt;run(Array, true)
+#6 /Users/sajidpatel/sites/m2react/vendor/phpunit/phpunit/phpunit(53): PHPUnit\TextUI\Command::main()
+#7 {main}</stack-trace>
+      </failure>
+    </test-case>
+  </test-cases>
+</alr:test-suite>
