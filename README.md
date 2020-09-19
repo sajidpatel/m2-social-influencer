@@ -1,7 +1,3 @@
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/larsroettig/module-graphqlstorepickup/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/larsroettig/module-graphqlstorepickup/?branch=master)
-[![Code Coverage](https://scrutinizer-ci.com/g/larsroettig/module-graphqlstorepickup/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/larsroettig/module-graphqlstorepickup/?branch=master)
-[![Build Status](https://scrutinizer-ci.com/g/larsroettig/module-graphqlstorepickup/badges/build.png?b=master)](https://scrutinizer-ci.com/g/larsroettig/module-graphqlstorepickup/build-status/master)
-
 # Magento Module Social Influencer / Influencer Products Coding Challenge
 
  - [Main Functionalities](#markdown-header-main-functionalities)
@@ -18,9 +14,9 @@
 Do not use this in production, there are no security checks implemented.
 
 -----
-## Social Influencer Products Coding Chalenge
+## Social Influencer Products Coding Challenge
 
-The purpose of this Magento 2 module to as a coding challenge for suitable candidates.
+The purpose of this Magento 2 module is as a coding challenge for suitable candidates.
 
 This module is **NOT intended for production**!
 
@@ -48,15 +44,11 @@ Will be emailed to candidates in due course.
 
 Fork the repository as a public repository in your own github account
 Complete the coding challenge
-Submit your git repo to sajid.patel@galtone.co.uk
+Submit your git repo to sajid.patel@interactivedezine.co.uk
 
-##### The Code is not for a ***production server*** it is only **proof of concept** imeplementation
+##### The Code is not for use on a ***production server***, it is only meant as a **proof of concept** coding challenge
 
 ## How to use it 
-
-## Possibly Query (https://your_domain.test/graphql)
-
-![GraphQL_Playground]()
 
 # GraphQL 
 # Queries
