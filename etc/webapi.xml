@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+    <route method="GET" url="/V1/socialinfluencer/products">
+        <service class="SajidPatel\SocialInfluencer\Api\SocialInfluencerProductsSessionRepositoryInterface" method="getSkus"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+    <route method="POST" url="/V1/socialinfluencer/products/:sku/:influencer_id">
+        <service class="SajidPatel\SocialInfluencer\Api\SocialInfluencerProductsSessionRepositoryInterface" method="addBySku"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+    <route method="DELETE" url="/V1/socialinfluencer/products/:sku/:influencer_id">
+        <service class="SajidPatel\SocialInfluencer\Api\SocialInfluencerProductsSessionRepositoryInterface" method="removeBySku"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+    <route method="POST" url="/V1/social-influencer/influencer_product">
+        <service class="SajidPatel\SocialInfluencer\Api\InfluencerProductRepositoryInterface" method="save"/>
+        <resources>
+            <!-- resource ref="SajidPatel_SocialInfluencer::Influencer_product_save"/ -->
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+    <route method="GET" url="/V1/social-influencer/influencer_product/search">
+        <service class="SajidPatel\SocialInfluencer\Api\InfluencerProductRepositoryInterface" method="getList"/>
+        <resources>
+            <!-- resource ref="SajidPatel_SocialInfluencer::Influencer_product_view"/ -->
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+    <route method="GET" url="/V1/social-influencer/influencer_product/:sku">
+        <service class="SajidPatel\SocialInfluencer\Api\InfluencerProductRepositoryInterface" method="get"/>
+        <resources>
+            <!-- resource ref="SajidPatel_SocialInfluencer::Influencer_product_view"/ -->
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+    <route method="PUT" url="/V1/social-influencer/influencer_product/:sku">
+        <service class="SajidPatel\SocialInfluencer\Api\InfluencerProductRepositoryInterface" method="save"/>
+        <resources>
+            <!-- resource ref="SajidPatel_SocialInfluencer::Influencer_product_update"/ -->
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+    <route method="DELETE" url="/V1/social-influencer/influencer_product/:sku/:influencer_id">
+        <service class="SajidPatel\SocialInfluencer\Api\InfluencerProductRepositoryInterface" method="deleteByInfluencerIdSku"/>
+        <resources>
+            <!-- resource ref="SajidPatel_SocialInfluencer::Influencer_product_delete"/ -->
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+</routes>

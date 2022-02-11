@@ -1,0 +1,28 @@
+<?php
+/**
+ *
+ * @var $block Magento\Framework\View\Element\Template
+ */
+?>
+<div data-bind="scope: 'influencer-products-container'">
+    <h1>Influencer</h1>
+    <div>Search Influencer Products</div>
+    <input id="influencer-products-search-input" type="text" placeholder="Search" data-bind="value: influencerProductsName, valueUpdate: 'afterkeydown', hasFocus: setIsSelected" />
+    <div id="influencer-products-list">
+        <!-- ko template: getTemplate() --><!-- /ko -->
+    </div>
+</div>
+<script type="text/x-magento-init">
+    {
+        "*" : {
+            "Magento_Ui/js/core/app" : {
+                "components" : {
+                    "influencer-products-container" :  {
+                        "component" : "SajidPatel_SocialInfluencer/js/search-products",
+                        "template" : "SajidPatel_SocialInfluencer/products"
+                    }
+                }
+            }
+        }
+    }
+</script>

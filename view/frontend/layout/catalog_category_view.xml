@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="category.product.addto">
+            <block class="SajidPatel\SocialInfluencer\Block\AddToCollection" name="social_influencer_addto"/>
+        </referenceBlock>
+        <referenceContainer name="sidebar.additional">
+            <block class="Magento\Framework\View\Element\Template" name="catalog.influencer.sidebar"
+                   template="SajidPatel_SocialInfluencer::product/influencer/sidebar.phtml">
+            </block>
+        </referenceContainer>
+    </body>
+</page>

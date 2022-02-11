@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="SajidPatel\SocialInfluencer\Model\SocialInfluencerProductsSession">
+        <arguments>
+            <argument name="storage" xsi:type="object">SajidPatel\SocialInfluencer\Model\ProductsSessionStorage\Virtual</argument>
+        </arguments>
+    </type>
+    <virtualType name="SajidPatel\SocialInfluencer\Model\ProductsSessionStorage\Virtual" type="Magento\Framework\Session\Storage">
+        <arguments>
+            <argument name="namespace" xsi:type="string">social_influencer_products</argument>
+        </arguments>
+    </virtualType>
+    <preference for="SajidPatel\SocialInfluencer\Api\SocialInfluencerProductsSessionRepositoryInterface" type="SajidPatel\SocialInfluencer\Model\SocialInfluencerProductsSessionRepository"/>
+    <preference for="SajidPatel\SocialInfluencer\Api\InfluencerProductRepositoryInterface" type="SajidPatel\SocialInfluencer\Model\InfluencerProductRepository"/>
+    <preference for="SajidPatel\SocialInfluencer\Api\Data\InfluencerProductInterface" type="SajidPatel\SocialInfluencer\Model\Data\InfluencerProduct"/>
+    <preference for="SajidPatel\SocialInfluencer\Api\Data\InfluencerProductSearchResultsInterface" type="Magento\Framework\Api\SearchResults"/>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="social_influencer_product_listing_data_source" xsi:type="string">SajidPatel\SocialInfluencer\Model\ResourceModel\InfluencerProduct\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <virtualType name="SajidPatel\SocialInfluencer\Model\ResourceModel\InfluencerProduct\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">social_influencer_product</argument>
+            <argument name="resourceModel" xsi:type="string">SajidPatel\SocialInfluencer\Model\ResourceModel\InfluencerProduct\Collection</argument>
+        </arguments>
+    </virtualType>
+
+    <preference for="SajidPatel\SocialInfluencer\Api\InfluencerRepositoryInterface" type="SajidPatel\SocialInfluencer\Model\InfluencerRepository"/>
+    <preference for="SajidPatel\SocialInfluencer\Api\Data\InfluencerInterface" type="SajidPatel\SocialInfluencer\Model\Data\Influencer"/>
+    <preference for="SajidPatel\SocialInfluencer\Api\Data\InfluencerSearchResultsInterface" type="Magento\Framework\Api\SearchResults"/>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="social_influencer_listing_data_source" xsi:type="string">SajidPatel\SocialInfluencer\Model\ResourceModel\Influencer\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <virtualType name="SajidPatel\SocialInfluencer\Model\ResourceModel\Influencer\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">social_influencer</argument>
+            <argument name="resourceModel" xsi:type="string">SajidPatel\SocialInfluencer\Model\ResourceModel\Influencer\Collection</argument>
+        </arguments>
+    </virtualType>
+    <type name="Magento\Framework\GraphQl\Query\Resolver\Argument\FieldEntityAttributesPool">
+        <arguments>
+            <argument name="attributesInstances" xsi:type="array">
+                <item name="social_influencer_product" xsi:type="object">
+                    \SajidPatel\SocialInfluencer\Model\Resolver\Filters\ProductsArgument
+                </item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Magento\Framework\GraphQl\Query\Resolver\Argument\FieldEntityAttributesPool">
+        <arguments>
+            <argument name="attributesInstances" xsi:type="array">
+                <item name="social_influencer" xsi:type="object">
+                    \SajidPatel\SocialInfluencer\Model\Resolver\Filters\InfluencersArgument
+                </item>
+            </argument>
+        </arguments>
+    </type>
+</config>

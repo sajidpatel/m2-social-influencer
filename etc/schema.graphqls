@@ -1,0 +1,119 @@
+# Influencer Product Graphql scheme
+type Query {
+    searchInfluencer (
+        filter: InfluencerFilterInput @doc(description: "")
+        pageSize: Int = 5 @doc(description: "Set the limit on items shown on the page")
+        currentPage: Int = 1 @doc(description: "Sets the current Page in pagination")
+    ):InfluencerOutput
+    @resolver(class: "\\SajidPatel\\SocialInfluencer\\Model\\Resolver\\Influencer")
+    @doc(description: "Search by Influencer, get Influencer, Influencer Products and Catalog Products as an output.")
+
+    searchInfluencerProduct (
+        filter: InfluencerProductFilterInput @doc(description: "")
+        pageSize: Int = 5 @doc(description: "How many items should show on the page")
+        currentPage: Int = 1 @doc(description: "Allows to ussing paging it start with 1")
+    ):InfluencerProductOutput
+    @resolver(class: "\\SajidPatel\\SocialInfluencer\\Model\\Resolver\\InfluencerProduct")
+    @doc(description: "Search by Influencer Products, get Influencer Products and Catalog Products as an output.")
+}
+
+type Mutation {
+    createInfluencer(input: InfluencerInput!): InfluencerCreate
+    @resolver(class: "\\SajidPatel\\SocialInfluencer\\Model\\Resolver\\CreateInfluencer")
+    @doc(description: "Create a new influencer.")
+
+    createInfluencerProduct(input: InfluencerProductInput!): InfluencerProductCreate
+    @resolver(class: "\\SajidPatel\\SocialInfluencer\\Model\\Resolver\\CreateInfluencerProduct")
+    @doc(description: "Create a new influencer product.")
+}
+
+type InfluencerCreate {
+    message: String @doc(description: "Success or error Message")
+    id: Int @doc(description: "The influencer id")
+}
+
+type InfluencerProductCreate {
+    message: String @doc(description: "Success or error Message")
+    id: Int @doc(description: "The influencer id")
+}
+
+input InfluencerInput @doc(description: "Influnecer Input for create Influencer.") {
+    customer_id: Int @doc(description: "Input by influencer object by customer id(s).")
+    social_name: String @doc(description: "Input by influencer object by Social Name.")
+    enabled: Boolean @doc(description: "Input by influencer object by Social Name.")
+    created_at: String @doc(description: "Input by Influencer object by created at given the from and to dates.")
+    updated_at: String @doc(description: "Input by Influencer object by created at given the from and to dates.")
+}
+
+input InfluencerProductInput @doc(description: "Influnecer Input for create Influencer.") {
+    influencer_id: Int @doc(description: "Input by influencer object by customer id(s).")
+    sku: String @doc(description: "Input by influencer object by Social Name.")
+    enabled: Boolean @doc(description: "Input by influencer object by Social Name.")
+    created_at: String @doc(description: "Input by Influencer object by created at given the from and to dates.")
+    updated_at: String @doc(description: "Input by Influencer object by created at given the from and to dates.")
+}
+
+input InfluencerFilterInput {
+    id: FilterTypeInput  @doc(description: "Filter Influencer object by id(s).")
+    social_name: FilterTypeInput @doc(description: "Filter Influencer object by Social Name(s).")
+    customer_id: FilterTypeInput @doc(description: "Filter Influencer object by Customer Id(s).")
+    enabled: FilterTypeInput @doc(description: "Filter Influencer object by Enabled / Disabled.")
+    created_at: FilterRangeTypeInput @doc(description: "Filter Influencer object by created at given the from and to dates.")
+    updated_at: FilterRangeTypeInput @doc(description: "Filter Influencer object by updated at given the from and to dates.")
+    or: InfluencerProductFilterInput
+}
+
+input InfluencerProductFilterInput {
+    id: FilterTypeInput  @doc(description: "Filter Influencer Product object by id(s).")
+    sku: FilterTypeInput @doc(description: "Filter Influencer Product object by Influencer Product Sku(s).")
+    influencer_id: FilterTypeInput @doc(description: "Filter Influencer Product object by Influencer Id(s).")
+    enabled: FilterTypeInput @doc(description: "Filter Influencer Product object by Enabled / Disabled.")
+    created_at: FilterRangeTypeInput @doc(description: "Filter Influencer Product object by created at given the from and to dates.")
+    updated_at: FilterRangeTypeInput @doc(description: "Filter Influencer Product object by created at given the from and to dates.")
+    or: InfluencerProductFilterInput
+}
+
+type InfluencerOutput {
+    total_count:  Int @doc(description: "Total number of Influnecers returned.")
+    influencers: [Influencer] @doc(description: "An Array of Influnecers, Influnecer Products and Catalog Products.")
+}
+
+type InfluencerProductOutput {
+    total_count:  Int @doc(description: "Total number of Influnecer Products returned.")
+    products: [InfluencerProduct] @doc(description: "An Array of Influnecers, Influnecer Products and Catalog Products.")
+}
+
+type Influencer @doc(description: "Influencer contains information about the social inflencer and their products") {
+    id : Int @doc(description: "Influencer Product Id")
+    customer_id : Int @doc(description: "Influencer Customer Id")
+    social_name : String @doc(description: "Influencer Social")
+    enabled : String @doc(description: "Influencer Product Enabled")
+    products: [ProductList] @doc(description: "Array of Products")
+    @resolver(class: "SajidPatel\\SocialInfluencer\\Model\\Resolver\\ProductsList")
+}
+
+type ProductList {
+    id: Int @doc(description: ""),
+    sku: String @doc(description: ""),
+    influencer_id: String @doc(description: ""),
+    enabled: Boolean @doc(description: ""),
+    created_at: String @doc(description: "")
+    updated_at: String @doc(description: "")
+    product: ProductInterface
+    @doc(description: "The ProductInterface object, which contains details about this product option")
+    @resolver(class: "Magento\\CatalogGraphQl\\Model\\Resolver\\Product")
+}
+
+type InfluencerProduct {
+    id: Int @doc(description: ""),
+    sku: String @doc(description: ""),
+    influencer_id: String @doc(description: ""),
+    enabled: Boolean @doc(description: ""),
+    created_at: String @doc(description: "")
+    updated_at: String @doc(description: "")
+    influencer: Influencer @doc(description: "")
+    @resolver(class: "SajidPatel\\SocialInfluencer\\Model\\Resolver\\Influencer")
+    product: ProductInterface
+    @doc(description: "The ProductInterface object, which contains details about this product option")
+    @resolver(class: "Magento\\CatalogGraphQl\\Model\\Resolver\\Product")
+}

@@ -1,0 +1,40 @@
+<?xml version="1.0" ?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table comment="Social Influencer Entity" engine="innodb" name="social_influencer" resource="default">
+        <column comment="Entity Id" identity="true" name="id" nullable="false" padding="10" unsigned="false" xsi:type="int"/>
+        <column name="customer_id" nullable="false" xsi:type="int" padding="10" unsigned="true" />
+        <column name="enabled" nullable="true" xsi:type="boolean"/>
+        <column length="255" name="social_name" nullable="true" xsi:type="varchar"/>
+        <column default="CURRENT_TIMESTAMP" name="created_at" on_update="false" nullable="false" xsi:type="timestamp"/>
+        <column default="CURRENT_TIMESTAMP" name="updated_at" on_update="true" nullable="false" xsi:type="timestamp"/>
+        <constraint referenceId="PRIMARY" xsi:type="primary">
+            <column name="id"/>
+        </constraint>
+        <constraint referenceId="social_influencer_CSTR_ID_CSTR_ENTT_ENTT_ID" xsi:type="foreign" column="customer_id"
+                    referenceTable="customer_entity" referenceColumn="entity_id" onDelete="CASCADE" table="social_influencer" />
+        <constraint xsi:type="unique" referenceId="SOCIAL_INFLUENCER_SOCIAL_NAME">
+            <column name="social_name" />
+        </constraint>
+        <constraint xsi:type="unique" referenceId="SOCIAL_INFLUENCER_CUSTOMER_ID">
+            <column name="customer_id" />
+        </constraint>
+    </table>
+    <table comment="Social Influencer Product Entity" engine="innodb" name="social_influencer_product" resource="default">
+        <column comment="Entity Id" identity="true" name="id" nullable="false" padding="10" unsigned="false" xsi:type="int"/>
+        <column length="255" name="sku" nullable="true" xsi:type="varchar"/>
+        <column name="enabled" nullable="true" xsi:type="boolean"/>
+        <column name="influencer_id" nullable="false" xsi:type="int" padding="10" unsigned="false" />
+        <column default="CURRENT_TIMESTAMP" name="created_at" on_update="false" nullable="false" xsi:type="timestamp"/>
+        <column default="CURRENT_TIMESTAMP" name="updated_at" on_update="true" nullable="false" xsi:type="timestamp"/>
+        <constraint referenceId="PRIMARY" xsi:type="primary">
+            <column name="id"/>
+        </constraint>
+        <constraint xsi:type="unique" referenceId="SOCIAL_INFLUENCER_PRODUCT_SKU_INFLUENCER_ID">
+            <column name="sku" />
+            <column name="influencer_id" />
+        </constraint>
+        <constraint referenceId="FK_C093531E7BA58D13544FB57C6CAEC0FE" xsi:type="foreign" column="influencer_id"
+                    referenceTable="social_influencer" referenceColumn="id" onDelete="CASCADE"
+                    table="social_influencer_product" />
+    </table>
+</schema>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<alr:test-suite xmlns:alr="urn:model.allure.qatools.yandex.ru" start="1591263941741" stop="1591263941795" version="1.4.0">
+  <name>SajidPatel\SocialInfluencer\Block\AddToCollectionTest</name>
+  <test-cases>
+    <test-case start="1591263941745" stop="1591263941787" status="passed">
+      <name>testExtendsTemplateBlock</name>
+    </test-case>
+    <test-case start="1591263941787" stop="1591263941790" status="passed">
+      <name>testImplementsProductAwareInterface</name>
+    </test-case>
+    <test-case start="1591263941790" stop="1591263941794" status="passed">
+      <name>testReturnsRestEndpointUrl</name>
+    </test-case>
+  </test-cases>
+</alr:test-suite>

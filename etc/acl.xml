@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+	<acl>
+		<resources>
+			<resource id="Magento_Backend::admin">
+				<resource id="SajidPatel_SocialInfluencer::Influencer_product" sortOrder="10" title="Influencer_product">
+					<resource id="SajidPatel_SocialInfluencer::Influencer_product_save" sortOrder="10" title="Save Influencer_product"/>
+					<resource id="SajidPatel_SocialInfluencer::Influencer_product_delete" sortOrder="20" title="Delete Influencer_product"/>
+					<resource id="SajidPatel_SocialInfluencer::Influencer_product_update" sortOrder="30" title="Update Influencer_product"/>
+					<resource id="SajidPatel_SocialInfluencer::Influencer_product_view" sortOrder="40" title="View Influencer_product"/>
+				</resource>
+				<resource id="SajidPatel_SocialInfluencer::Influencer" sortOrder="10" title="Influencer">
+					<resource id="SajidPatel_SocialInfluencer::Influencer_save" sortOrder="10" title="Save Influencer"/>
+					<resource id="SajidPatel_SocialInfluencer::Influencer_delete" sortOrder="20" title="Delete Influencer"/>
+					<resource id="SajidPatel_SocialInfluencer::Influencer_update" sortOrder="30" title="Update Influencer"/>
+					<resource id="SajidPatel_SocialInfluencer::Influencer_view" sortOrder="40" title="View Influencer"/>
+				</resource>
+			</resource>
+		</resources>
+	</acl>
+</config>

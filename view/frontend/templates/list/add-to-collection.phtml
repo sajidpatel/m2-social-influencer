@@ -1,0 +1,28 @@
+<?php declare(strict_types = 1);
+
+/** @var \SajidPatel\SocialInfluencer\Block\AddToCollection $block */
+
+?>
+<script type="text/x-magento-init">
+{
+    "*": {
+        "Magento_Ui/js/core/app": {
+            "components": {
+                "socialinfluencer-products-addto": {
+                    "component": "SajidPatel_SocialInfluencer/js/socialinfluencer-products",
+                    "update_url": "<?= $block->getApiUpdateUrl() ?>",
+                    "influencer_id": "<?= $block->getInfluencerId() ?>"
+                }
+            }
+        }
+    }
+}
+</script>
+<span data-bind="scope: 'socialinfluencer-products-addto'">
+    <a href="#" class="action tostar" data-bind="
+    click: select('<?= $block->escapeJs($block->getProductSku()) ?>'),
+    text: isSocialInfluencerProduct('<?= $block->escapeJs($block->getProductSku()) ?>') ?
+        '<?= __('Unfavorite!') ?>' :
+        '<?= __('Favorite!') ?>',
+    visible: isInfluencerLoggedIn()"></a>
+</span>

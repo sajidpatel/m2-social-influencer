@@ -1,0 +1,29 @@
+{
+  "name": "sajidpatel/m2-social-influencer",
+  "description": "Example Magento 2 module created for a Coding Challenge",
+  "require": {
+      "php": ">=7.3.0",
+      "magento/framework": "*",
+      "magento/module-customer": "*",
+      "ext-json": "*"
+  },
+  "version": "0.1.0",
+  "type": "magento2-module",
+  "license": "OSL-3.0",
+  "minimum-stability": "dev",
+  "authors": [
+    {
+      "name": "Sajid Patel",
+      "email": "sajid.patel@interactivedezine.com",
+      "homepage": "https://sajidpatel.me/"
+    }
+  ],
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "SajidPatel\\SocialInfluencer\\": ""
+    }
+  }
+}
